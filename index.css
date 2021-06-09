@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    height: 80px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+}
+
+nav div.logo {
+    width: 40%;
+    font-family: sans-serif;
+    background-image: linear-gradient(to top, red 20%, orange 80%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-size: 2rem;
+    padding-top: 20px;
+}
+
+nav div.navbar {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+nav div.navbar li {
+    list-style: none;
+    padding-top: 20px;
+}
+
+nav div.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+}

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&family=Roboto:wght@100&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #38383b;
+        }
+        
+        .scroll {
+            position: sticky;
+            top: 0;
+            z-index: 5555;
+            background-color: black;
+            transition: all ease-in 0.2s;
+        }
+        
+        .fa-facebook {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .fa-twitter {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .fa-google {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .fa-shopping-cart {
+            color: white;
+            text-decoration: none;
+        }
+        
+        div.con {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        div.con nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 100%;
+            background-color: transparent;
+        }
+        
+        div.con nav a.logo {
+            width: 20%;
+            padding-left: 30px;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        div.con nav ul {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        div.con nav div.icon {
+            width: 20%;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        div.con nav ul li {
+            list-style: none;
+            font-size: 1.4rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        a:hover {
+            color: gray;
+        }
+        
+        div.con nav a.logo:hover {
+            color: gray;
+        }
+        
+        a {
+            text-decoration: none;
+            padding: 0 15px;
+            color: white;
+        }
+        
+        div.headmain {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 200px;
+        }
+        
+        div.headmain h1 {
+            font-size: 2.8rem;
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 400;
+            padding: 20px 0;
+            color: white;
+        }
+        
+        div.headmain p {
+            font-size: 1.3rem;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 200;
+            text-align: center;
+            padding: 20px 0;
+            color: white;
+        }
+        
+        div.photo {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 100px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        div.photo div {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        div.photo div img {
+            width: 300px;
+            height: 300px;
+            padding: 20px;
+        }
+        
+        div.photo div p {
+            color: white;
+            font-size: 1.1rem;
+            font-family: 'Bodoni Moda', serif;
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        footer {
+            padding: 50px 10px;
+            height: 270px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        footer div.foot {
+            display: flex;
+            width: 100%;
+        }
+        
+        footer div.foot div.c1 {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        footer div.foot div.c2 {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        footer div.foot div.c2 a {
+            text-decoration: underline;
+            color: white;
+            font-size: 1.8rem;
+            font-family: 'Bodoni Moda', serif;
+            padding: 10px;
+        }
+        
+        footer div.foot div.c2 a:hover {
+            color: gray;
+        }
+        
+        footer div.foot div.c1 h1 {
+            font-size: 2.2rem;
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 400;
+            padding: 10px;
+            color: white;
+        }
+        
+        footer div.foot div.c1 h3 {
+            font-size: 1.8rem;
+            font-family: 'Bodoni Moda', serif;
+            font-weight: 400;
+            padding: 10px;
+            color: white;
+        }
+        
+        footer div.foot div.c1 div.icon {
+            font-size: 50px;
+        }
+        
+        @media only screen and (max-width:769px) {
+            div.con nav a.logo {
+                font-size: 1.7rem;
+                margin: auto;
+            }
+            div.con nav ul li a {
+                font-size: 1.1rem;
+            }
+            div.con nav div.icon {
+                display: none;
+            }
+            div.con nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            div.con nav a.logo {
+                width: 40%;
+                margin: 0px;
+            }
+            div.con nav ul {
+                width: 50%;
+            }
+            footer div.foot div.c1 h1 {
+                font-size: 1.5rem;
+            }
+            footer div.foot div.c1 h3 {
+                font-size: 1.2rem;
+            }
+            footer div.foot div.c1 div.icon {
+                font-size: 35px;
+            }
+            footer div.foot div.c2 a {
+                font-size: 1.1rem;
+            }
+            div.headmain {
+                padding: 40px 100px;
+            }
+            div.headmain h1 {
+                font-size: 2rem;
+            }
+            div.headmain p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media only screen and (max-width:560px) {
+            div.con nav a.logo {
+                width: 30%;
+                font-size: 1.3rem;
+            }
+            div.con nav ul {
+                width: 50%;
+            }
+            div.con nav ul li a {
+                padding: 0px 10px;
+                font-size: 0.9rem;
+            }
+            div.photo {
+                padding: 30px 0;
+            }
+            div.photo div img {
+                width: 200px;
+            }
+            div.headmain {
+                padding: 40px 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con scroll">
+        <nav>
+            <a href="" class="logo">
+                EverGreen
+            </a>
+            <ul>
+                <li><a href="/">Shop</a></li>
+                <li><a href="/ourstory.html">Story</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <div class="icon">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-google"></a>
+                <a href="#" class="fa fa-shopping-cart"></a>
+            </div>
+        </nav>
+    </div>
+    <div class="headmain">
+        <h1>Our Plants</h1>
+        <p>Lorem ipsum dolor sit amet Nullam vel ultricies metus, at tincidunt arcu. Morbi vestibulum, ligula ut efficitur mollis, mi massa accumsan justo.</p>
+    </div>
+    <div class="photo">
+        <div><img src="a1.jpg" alt="logo" onmouseover="this.src='a2.jpg'" onmouseout="this.src='a1.jpg'">
+            <p>Lily Plant</p>
+        </div>
+        <div><img src="b1.jpg" alt="logo" onmouseover="this.src='b2.jpg'" onmouseout="this.src='b1.jpg'">
+            <p>Palm Plant</p>
+        </div>
+        <div><img src="c1.jpg" alt="logo" onmouseover="this.src='c2.jpg'" onmouseout="this.src='c1.jpg'">
+            <p>Cactus Plant</p>
+        </div>
+        <div><img src="d1.jpg" alt="logo" onmouseover="this.src='d2.jpg'" onmouseout="this.src='d1.jpg'">
+            <p>Orchid Plant</p>
+        </div>
+        <div><img src="e1.jpg" alt="logo" onmouseover="this.src='e2.jpg'" onmouseout="this.src='e1.jpg'">
+            <p>Snake Plant</p>
+        </div>
+        <div><img src="f1.jpg" alt="logo" onmouseover="this.src='f2.jpg'" onmouseout="this.src='f1.jpg'">
+            <p>Pink Calathea</p>
+        </div>
+    </div>
+    <footer>
+        <div class="foot">
+            <div class="c1">
+                <h1>
+                    Evergreen
+                </h1>
+                <h3>
+                    Our Partners
+                </h3>
+                <div class="icon">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                </div>
+            </div>
+            <div class="c2">
+                <a href="/">Shop</a>
+                <a href="/ourstory.html">Our story</a>
+                <a href="#">Journal</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var p = 0;
+        $(window).scroll(function() {
+            var c = $(this).scrollTop();
+            if (c == 0) {
+                onhide();
+            } else if (c > p) {
+                onhide();
+            } else {
+                onside();
+            }
+            p = c;
+        });
+
+        function onhide() {
+            $(".con").removeClass("scroll");
+        }
+
+        function onside() {
+            $(".con").addClass("scroll");
+        }
+    </script>
+</body>
+
+</html>
